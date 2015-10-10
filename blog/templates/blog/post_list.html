@@ -7,16 +7,19 @@
 <div class="article">
 
 <div class="header">
-<h1>{{ post.title }}</h1>
-<p>{{ post.summary }}</p>
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.summary }}</p>
 </div>
 
 {{ post.text }}
 
 <div class="footer">
-<p>Posted {{ post.published_date }}</p>
-<p><a href="{% url %}">Permalink</a></p>
+  <p>Posted {{ post.published_date }}</p>
+  <p><a href="{{ post.get_absolute_url() }}">Permalink</a></p>
+  <p>Published at <span class="sitetitle"><a href="{% url 'homepage' %}">{{ site_title }}</a></p>
 </div>
+
+</div> <!-- end article -->
 
 {% endfor %}
 

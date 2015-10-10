@@ -12,6 +12,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
 
     def get_posts(self):
+        """Return all published blog posts, sorted by date descending"""
         posts = Post.objects.exclude(published_date__isnull=True).exclude(published_date__exact='').order_by('-published_date')
         return posts
 
@@ -22,6 +23,9 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('blog_post', kwargs={'post_pk': self.pk})
 
+    def is_published(self):
+        return self.published_date != None and self.published_date != ''
+
     def __str__(self):
         return self.title
 
@@ -31,5 +35,5 @@ class Comment(models.Model):
     author = models.CharField(max_length=128)
     text = models.TextField()
     date = models.DateTimeField(default=timezone.now)
-    post = models.ForeignKey(models.Post)
+    blog_post = models.ForeignKey(models.Post)
 

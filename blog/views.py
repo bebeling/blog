@@ -4,7 +4,7 @@ from . import models
 from blog import settings
 
 def homepage(request):
-    posts = models.Post.get_posts()[0]
+    posts = models.Post.get_posts()[0]  # only display most recent post
     context = {
         'page_title': settings.BLOG_TITLE,
         'posts': posts,
@@ -21,9 +21,17 @@ def archive(request, post_pk):
     }
     return render(request, 'blog/archive.html', context)
 
-def blog_post(request, post_pk):
+def blog_post(request, post_pk, comment_form=None):
     post = models.Post.objects.get(pk=post_pk)
+
+    if not post.is_published()
+        return redirect('homepage')
+
+    comments = models.Post.objects.filter(comment__post=post).order_by('-date')
+    form = commment_form or forms.PostForm()
     context = {
+        'comment_form': form,
+        'comments': comments,
         'page_title': post.title,
         'post': post,
         'site_title': settings.BLOG_TITLE,
@@ -34,7 +42,7 @@ def submit_comment(request, post_pk):
     if request.method == 'POST':
         post = models.Post.objects.get(pk=post_pk)
 
-        if post.published_date == None or post.published_date == '':
+        if not post.is_published():
             return redirect('homepage')
 
         form = forms.CommentForm(request.POST)
@@ -44,11 +52,7 @@ def submit_comment(request, post_pk):
             comment.save()
             return redirect('blog.views.post', pk=blog_post.pk)
         else:
-            context = {
-                'form': form,
-                'page_title': post.title,
-                'post': post,
-                'site_title': settings.BLOG_TITLE,
-            }
-            return render(request, 'blog/blog_post.html', context)
+            return blog_post(request, post_pk, form)
+    else:
+        return redirect('blog_post', pk=post_pk)
 

@@ -1,27 +1,43 @@
 {% extends 'base.html' %}
 
-{% block post_content %}
+{% load naturaltime from humanize %}
+
+{% block page_content %}
 
 <div class="article">
 
 <div class="header">
-<h1>{{ post.title }}</h1>
-<p>{{ post.summary }}</p>
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.summary }}</p>
 </div>
 
-{{ post_text }}
+{{ post.text }}
 
 <div class="footer">
-<p>Posted {{ post.published_date }}</p>
-<p><a href="{% url %}">Permalink</a></p>
-<p>Published at <span class="sitetitle"><a href="{% url 'homepage' %}">{{ site_title }}</a></p>
+  <p>Posted {{ post.published_date }}</p>
+  <p><a href="{{ post.get_absolute_url() }}">Permalink</a></p>
+  <p>Published at <span class="sitetitle"><a href="{% url 'homepage' %}">{{ site_title }}</a></p>
 </div>
 
 <div class="comments">
-{{ post.comments }}
-</div>
+  <form method="POST" action="{% url 'comment' post_pk=post.pk %} class="comment_form">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <button type="submit" class="comment_submit">Comment</button>
+  </form>
+  
+  {% for comment in comments %}
+    <div class="comment">
+      <p>
+        <span class="comment_author">{{ comment.author }}</span>
+        <span class="comment_author">{{ comment.date|naturaltime }}</span>
+      </p>
+      <p class="comment_text">{{ comment.text }}</p>
+    </div>
+  {% endfor %}
 
-</div class="article">
+</div> <!-- end comments -->
+</div> <!-- end article -->
 
-{% endblock post_content %}
+{% endblock page_content %}
 
