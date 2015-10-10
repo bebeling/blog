@@ -30,6 +30,10 @@ body, html {
     margin: 0 auto;
 }
 
+#pagehead {
+    margin: 1.5em auto 0 auto;
+}
+
 #pagefoot {
     margin: 3em auto 1.5em auto;
 }
@@ -38,6 +42,27 @@ div {
     position: relative;
     width: 100%;
     margin: 1.5em auto;
+}
+
+
+/*---------------------------------------------
+ * article divider
+ *---------------------------------------------*/
+
+.article .footer hr {
+    border-top: medium double #333;
+    margin: 3em 11em;
+    color: #333;
+    text-align: center;
+}
+.article .footer hr:after {
+    content: '\00A7';
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: #f3e6ff;
 }
 
 

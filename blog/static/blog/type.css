@@ -13,6 +13,27 @@
 
 
 /*---------------------------------------------
+ * article styles
+ *---------------------------------------------*/
+.article .header a, a:link, a:visited, a:hover, a:focus, a:active {
+    text-decoration: none;
+}
+.article .header p {
+    font-style: italic;
+}
+.article .footer {
+    font-size: 0.85em;
+}
+.article .footer p {
+    margin: 0;
+    line-height: 1.765;
+}
+.article .footer .sitetitle {
+    font-size: 1.1em;
+}
+
+
+/*---------------------------------------------
  * page footer
  *---------------------------------------------*/
 
@@ -96,16 +117,6 @@ ul {
 
 .semiblock { /* for lists that semantically are an inline part of a p */
     margin: -0.75em 0 0.75em 0;
-}
-div.footer {
-    font-size: 0.85em;
-}
-div.footer p {
-    margin: 0;
-    line-height: 1.765;
-}
-div.footer .sitetitle {
-    font-size: 1.1em;
 }
 
 

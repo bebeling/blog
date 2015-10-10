@@ -6,7 +6,7 @@ class Post(models.Model):
     """A blog post"""
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=128)
-    summary = models.TextField()
+    summary = models.TextField()  # TODO blank=True
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
@@ -14,7 +14,7 @@ class Post(models.Model):
     @staticmethod
     def get_posts():
         """Return all published blog posts, sorted by date descending"""
-        posts = Post.objects.exclude(published_date__isnull=True).exclude(published_date__exact='').order_by('-published_date')
+        posts = Post.objects.exclude(published_date__isnull=True).order_by('-published_date')
         return posts
 
     def publish(self):

@@ -2,6 +2,9 @@
 
 {% load naturaltime from humanize %}
 
+{% block page_header %}
+{% endblock page_header %}
+
 {% block page_content %}
 
 <div class="article">
@@ -17,9 +20,11 @@
   <p>Posted {{ post.published_date }}</p>
   <p><a href="{{ post.get_absolute_url }}">Permalink</a></p>
   <p>Published at <span class="sitetitle"><a href="{% url 'homepage' %}">{{ site_title }}</a></p>
+  <hr>
 </div>
 
 <div class="comments">
+  <h2>Comments</h2>
   <form method="POST" action="{% url 'comment' post_pk=post.pk %}" class="comment_form">
     {% csrf_token %}
     {{ comment_form.as_p }}
