@@ -1,0 +1,92 @@
+/*---------------------------------------------
+ * browser defaults reset
+ *---------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    outline: 0;
+}
+
+
+/*---------------------------------------------
+ * layout styles
+ *---------------------------------------------*/
+
+body, html {
+    color: #000;
+    font-family: "Palatino Linotype", "Palatino nova", Palatino, Palladio, "URW Palladio L", "Book Antiqua", "Zapf Calligraphic", "FPL Neu", "TeX Gyre Pagella", Georgia, "DejaVu Serif", "Bitstream Vera Serif", "Droid Serif", "Trebuchet MS", Verdana, sans-serif;
+    font-size: 105%;
+
+    background: #f3e6ff; /* formerly #eee1ff, #e6ddff, #f5e6ff */
+}
+
+#pagewrap {
+    position: relative;
+    top: 0;
+    width: 33em;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#pagefoot {
+    margin: 3em auto 1.5em auto;
+}
+
+div {
+    position: relative;
+    width: 100%;
+    margin: 1.5em auto;
+}
+
+
+/*---------------------------------------------
+ * media-dependent styles
+ *---------------------------------------------*/
+
+@media all and (max-width: 40em) {
+    body, html {
+        width: 100%;
+        font-size: 100%;
+        background: #fff;
+    }
+    #pagewrap {
+        width: 100%;
+        padding: 0 0.5em;
+    }
+    img { /* prevents images from expanding beyond viewport */
+        max-width: 100%;
+        height: auto;
+    }
+    ol {
+        list-style: decimal inside none !important;
+    }
+    ul {
+        list-style: disc inside none !important;
+    }
+}
+
+@media print {
+    body {
+        width: 100%;
+        background: transparent;
+    }
+    #pagewrap {
+        width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: never;
+        page-break-inside: never;
+    }
+    p {
+        widows: 4;
+        orphans: 4;
+    }
+    .article a:link, .article a:visited {
+        color: #009 !important;
+        font-weight: bold;
+        text-decoration: none !important;
+    }
+}
+

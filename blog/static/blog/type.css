@@ -1,0 +1,154 @@
+/*---------------------------------------------
+ * site logo
+ *---------------------------------------------*/
+
+.sitetitle, .sitetitle a:link, .sitetitle a:visited {
+    font-family: Vollkorn, "Hoefler Text", "Linux Libertine", "Gentium Plus", Gentium, Cambria, "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+        /* based on the traditional Garamond-based serif stack from http://articles.sitepoint.com/article/eight-definitive-font-stacks/2 */
+
+    font-style: italic;
+    color: #000;
+    text-decoration: none;
+}
+
+
+/*---------------------------------------------
+ * page footer
+ *---------------------------------------------*/
+
+#pagefoot .sitetitle {
+    font-size: 1.5em;
+    line-height: 1;
+}
+#pagefoot ul {
+    list-style: none inside none;
+    text-align: center;
+}
+#pagefoot li {
+    display: inline;
+    margin: 0 1em;
+}
+
+
+/*---------------------------------------------
+ * headings
+ *---------------------------------------------*/
+
+h1 {
+    margin-bottom: 0.75em;
+    font-size: 2em;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: center;
+}
+h2 {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 1;
+    text-align: left;
+}
+h3 {
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1;
+    text-align: left;
+}
+
+
+/*---------------------------------------------
+ * body text
+ *---------------------------------------------*/
+
+abbr {
+    font-variant: small-caps;
+    text-decoration: none;
+}
+blockquote, dd, dl, dt, ol, p, ul {
+    display: block;
+    margin-bottom: 1.5em;
+    font-size: 1em;
+    font-variant-numeric: oldstyle-nums;
+    line-height: 1.5;
+    text-align: left;
+}
+blockquote {
+    margin: 0 2em 1.5em 2em;
+}
+dfn, .italic {
+    font-style: italic;
+}
+dt {
+    margin: 0;
+    font-size: 1.1em;
+    line-height: 1.3636;
+}
+ol {
+    list-style: decimal outside none;
+}
+ul {
+    list-style: disc outside none;
+}
+
+.bold { font-weight: bold; }
+.center { text-align: center; }
+
+.semiblock { /* for lists that semantically are an inline part of a p */
+    margin: -0.75em 0 0.75em 0;
+}
+div.footer {
+    font-size: 0.85em;
+}
+div.footer p {
+    margin: 0;
+    line-height: 1.765;
+}
+div.footer .sitetitle {
+    font-size: 1.1em;
+}
+
+
+/*---------------------------------------------
+ * links
+ *---------------------------------------------*/
+
+a, a:link, a:visited, a:hover, a:focus, a:active {
+    text-decoration: underline;
+}
+a, a:link { color: #0033b1; /* formerly #66f, then #03b */ }
+a:visited { color: #4c4c4c; /* formerly #999, then #666 */ }
+a:hover, a:focus, a:active { color: #00abd9; /* formerly 00c, 33f */ }
+a:focus, a:active { outline: #333 dotted 1px; }
+
+
+/*---------------------------------------------
+ * quotes
+ *---------------------------------------------*/
+
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+q:before { content: open-quote; }
+q:after { content: close-quote; }
+
+/* Safari/Chrome q support from http://monc.se/kitchen/129/rendering-quotes-with-css */
+q:before { content: "\201C"; }
+q:after { content: "\201D"; }
+q q:before { content: "\2018"; }
+q q:after { content: "\2019"; }
+
+blockquote, blockquote * { quotes: none; }
+blockquote>*:before { content: "\201C"; }
+blockquote>*:after { content: "\201D"; }
+blockquote q:before { content: "\2018"; }
+blockquote q:after { content: "\2019"; }
+
+
+/*---------------------------------------------
+ * other
+ *---------------------------------------------*/
+
+img.imgcenter {
+    display: block;
+    margin: 0 auto 1.5em auto;
+}
+
