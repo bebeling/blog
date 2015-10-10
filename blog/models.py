@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     """A blog post"""
-    author = models.FoeignKey('auth.User')
+    author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=128)
     summary = models.TextField()
     text = models.TextField()
@@ -35,5 +35,5 @@ class Comment(models.Model):
     author = models.CharField(max_length=128)
     text = models.TextField()
     date = models.DateTimeField(default=timezone.now)
-    blog_post = models.ForeignKey(models.Post)
+    blog_post = models.ForeignKey(Post)
 
