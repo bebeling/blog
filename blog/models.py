@@ -11,7 +11,8 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
-    def get_posts(self):
+    @staticmethod
+    def get_posts():
         """Return all published blog posts, sorted by date descending"""
         posts = Post.objects.exclude(published_date__isnull=True).exclude(published_date__exact='').order_by('-published_date')
         return posts

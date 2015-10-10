@@ -5,10 +5,10 @@ urlpatterns = [
     url(r'^$', views.homepage, name='homepage'),
     url(r'^about/$', views.about, name='about'),
     url(r'^posts/$', views.homepage, name='archive'),
-    url(r'^posts/(?P<post_pk>[0-9]+)/$', views.blog_post, name='blog_post')
+    url(r'^posts/(?P<post_pk>[0-9]+)/$', views.blog_post, name='blog_post'),
     url(r'^posts/(?P<post_pk>[0-9]+)/comment/$',
         views.submit_comment,
-        name='comment'
-    )
+        name='comment',
+    ),
 ]
 
