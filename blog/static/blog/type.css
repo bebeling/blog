@@ -15,8 +15,14 @@
 /*---------------------------------------------
  * article styles
  *---------------------------------------------*/
-.article .header a, a:link, a:visited, a:hover, a:focus, a:active {
+.article .header h1 a, a:link, a:visited, a:hover, a:focus, a:active {
     text-decoration: none;
+}
+.article .header h1 a, a:link, a:visited {
+    color: #000000;
+}
+.article .header h1 a:hover, a:focus, a:active {
+    color: #00abd9;
 }
 .article .header p {
     font-style: italic;
