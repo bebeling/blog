@@ -16,7 +16,7 @@
 
 body, html {
     color: #000;
-    font-family: "Palatino Linotype", "Palatino nova", Palatino, Palladio, "URW Palladio L", "Book Antiqua", "Zapf Calligraphic", "FPL Neu", "TeX Gyre Pagella", Georgia, "DejaVu Serif", "Bitstream Vera Serif", "Droid Serif", "Trebuchet MS", Verdana, sans-serif;
+    font-family: "Palatino Linotype", "Palatino nova", Palatino, Palladio, "URW Palladio L", "Book Antiqua", "Zapf Calligraphic", "FPL Neu", "TeX Gyre Pagella", Georgia, "Bitstream Vera Serif", "Droid Serif", "DejaVu Serif", "Trebuchet MS", Verdana, sans-serif;
     font-size: 105%;
 
     background: #f3e6ff; /* formerly #eee1ff, #e6ddff, #f5e6ff */
@@ -52,6 +52,9 @@ div {
 div.comment {
     font-size: .9em;
 }
+p.comment_header {
+    margin: 1.9em 0 -0.5em 0;
+}
 .comment_author {
     font-size: 1.1111em;
     font-weight: bold;
@@ -60,8 +63,17 @@ div.comment {
 .comment_date {
     margin-left: 1em;
 }
-p.comment_header {
-    margin: 1.9em 0 -0.5em 0;
+form.pure-form-aligned div.pure-control-group label {
+    width: 7em;
+}
+form.pure-form-aligned div.pure-controls {
+    margin: 1.5em 0 0 8em;
+}
+input[type=text] {
+    width: 24em;
+}
+textarea {
+    width: 24em;
 }
 button.submit_comment {
     background: #0033b1;
