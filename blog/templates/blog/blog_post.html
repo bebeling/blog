@@ -1,14 +1,14 @@
 {% extends 'blog/base.html' %}
 
+{% load naturaltime from humanize %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/forms-min.css">
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/buttons-min.css">
 {% endblock extra_css %}
 
-{% load naturaltime from humanize %}
-
-{% block page_header %}
-{% endblock page_header %}
+{% block page_title %}
+{% endblock page_title %}
 
 {% block page_content %}
 
@@ -16,19 +16,21 @@
 
 <div class="comments">
   <h2>Comments</h2>
-  <form method="POST" action="{% url 'comment' post_pk=post.pk %}" class="pure-form pure-form-aligned">
-    {% csrf_token %}
-    <fieldset>
-      {% for field in comment_form %}
-          <div class="pure-control-group">
-            {{ field.label_tag }}{{ field }}
-          </div>
-      {% endfor %}
-      <div class="pure-controls">
-        <button type="submit" class="pure-button pure-button-primary">Submit</button>
-      </div>
-    </fieldset>
-  </form>
+  <div class="comment_form">
+    <form method="POST" action="{% url 'comment' post_pk=post.pk %}" class="pure-form pure-form-aligned">
+      {% csrf_token %}
+      <fieldset>
+        {% for field in comment_form %}
+            <div class="pure-control-group">
+              {{ field.label_tag }}{{ field }}
+            </div>
+        {% endfor %}
+        <div class="pure-controls">
+          <button type="submit" class="pure-button pure-button-primary submit_comment">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
   
   {% for comment in comments %}
     <div class="comment">

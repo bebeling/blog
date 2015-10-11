@@ -63,7 +63,9 @@ div.comment {
 p.comment_header {
     margin: 1.9em 0 -0.5em 0;
 }
-
+button.submit_comment {
+    background: #0033b1;
+}
 
 /*---------------------------------------------
  * article divider
