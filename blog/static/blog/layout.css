@@ -15,12 +15,10 @@
  *---------------------------------------------*/
 
 body, html {
+    background: #e3d6c6;
     color: #303030;
     font-family: "Palatino Linotype", "Palatino nova", Palatino, Palladio, "URW Palladio L", "Book Antiqua", "Zapf Calligraphic", "FPL Neu", "TeX Gyre Pagella", Georgia, "Bitstream Vera Serif", "Droid Serif", "DejaVu Serif", "Trebuchet MS", Verdana, sans-serif;
     font-size: 105%;
-
-    background: #e3d6c6;
-/*    background: #f3e6ff; /* formerly #eee1ff, #e6ddff, #f5e6ff */
 }
 
 #pagewrap {
@@ -95,9 +93,9 @@ button.submit_comment {
  *---------------------------------------------*/
 
 .article .footer hr {
-    border-top: medium double #333;
+    border-top: medium double #303030;
     margin: 2.8em 11em;
-    color: #333;
+    color: #303030;
     text-align: center;
 }
 .article .footer hr.small {

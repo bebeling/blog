@@ -7,7 +7,7 @@
         /* based on the traditional Garamond-based serif stack from http://articles.sitepoint.com/article/eight-definitive-font-stacks/2 */
 
     font-style: italic;
-    color: #000;
+    color: #303030;
     text-decoration: none;
 }
 
@@ -19,10 +19,10 @@
     text-decoration: none;
 }
 .article .header h1 a, a:link, a:visited {
-    color: #000000;
+    color: #303030;
 }
 .article .header h1 a:hover, a:focus, a:active {
-    color: #4755eb;
+    color: #4a6fa5;
 }
 .article .header p {
     font-style: italic;
@@ -134,9 +134,9 @@ a, a:link, a:visited, a:hover, a:focus, a:active {
     text-decoration: underline;
 }
 a, a:link { color: #2933a3; }
-a:visited { color: #555877; }
-a:hover, a:focus, a:active { color: #4755eb; }
-a:focus, a:active { outline: #333 dotted 1px; }
+a:visited { color: #555877; } /* 3d3f57 */
+a:hover, a:focus, a:active { color: #4a6fa5; }
+a:focus, a:active { outline: #303030 dotted 1px; }
 
 
 /*---------------------------------------------
