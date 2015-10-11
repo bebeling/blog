@@ -40,6 +40,7 @@
 #pagefoot .sitetitle {
     font-size: 1.4em;
     line-height: 1;
+    text-align: center;
 }
 #pagefoot ul {
     list-style: none inside none;
@@ -56,21 +57,21 @@
  *---------------------------------------------*/
 
 h1 {
-    margin-bottom: 1.4em;
+    margin: 1.4em 0;
     font-size: 2.8em;
     font-weight: normal;
     line-height: 1;
     text-align: left;
 }
 h2 {
-    margin-bottom: 1.4em;
+    margin: 1.4em 0;
     font-size: 2em;
     font-weight: normal;
     line-height: 1.4;
     text-align: left;
 }
 h3 {
-    margin-bottom: 1.4em;
+    margin: 1.4em 0;
     font-size: 1em;
     font-weight: bold;
     line-height: 1.4;
@@ -88,14 +89,13 @@ abbr {
 }
 blockquote, dd, dl, dt, ol, p, ul {
     display: block;
-    margin-bottom: 1.4em;
+    margin: 1.4em 0;
     font-size: 1em;
-    font-variant-numeric: oldstyle-nums;
     line-height: 1.4;
     text-align: left;
 }
 blockquote {
-    margin: 0 2em 1.4em 2em;
+    margin: 1.4em 2em;
 }
 dfn, .italic {
     font-style: italic;
@@ -116,7 +116,7 @@ ul {
 .center { text-align: center; }
 
 .semiblock { /* for lists that semantically are an inline part of a p */
-    margin: -0.75em 0 0.75em 0;
+    margin: -0.7em 0 0.7em 0;
 }
 
 
@@ -160,6 +160,6 @@ blockquote q:after { content: "\2019"; }
 
 img.imgcenter {
     display: block;
-    margin: 0 auto 1.4em auto;
+    margin: 1.4em auto;
 }
 
