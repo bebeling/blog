@@ -46,6 +46,26 @@ div {
 
 
 /*---------------------------------------------
+ * comments styles
+ *---------------------------------------------*/
+
+div.comment {
+    font-size: .9em;
+}
+.comment_author {
+    font-size: 1.1111em;
+    font-weight: bold;
+    line-height: 1.134em;
+}
+.comment_date {
+    margin-left: 1em;
+}
+p.comment_header {
+    margin: 1.9em 0 -0.5em 0;
+}
+
+
+/*---------------------------------------------
  * article divider
  *---------------------------------------------*/
 

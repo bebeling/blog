@@ -3,6 +3,9 @@
 {% load static from staticfiles %}
 <head>
   <link rel="stylesheet" href="{% static "blog/styles.css" %}" type="text/css">
+  {% block extra_css %}
+  {% endblock extra_css %}
+
   <title>{{ titlebar }}</title>
 </head>
 
