@@ -65,7 +65,7 @@ p.comment_header {
 
 
 /*---------------------------------------------
- * comments form styles
+ * comment form styles
  *---------------------------------------------*/
 
 form.pure-form-aligned div.pure-control-group label {
@@ -75,17 +75,19 @@ form.pure-form-aligned div.pure-controls {
     margin: 1.5em 0 0 8em;
 }
 input[type=text] {
+    color: #303030;
     font-family: sans-serif;
     font-size: inherit;
     width: 19em;
 }
 textarea {
+    color: #303030;
     font-family: sans-serif;
     font-size: inherit;
     width: 19em;
 }
 button.submit_comment {
-    background: #3e5641; /*#8c8d9d;*/
+    background: #3e5641;
 }
 
 /*---------------------------------------------
