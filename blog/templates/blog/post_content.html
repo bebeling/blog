@@ -1,0 +1,15 @@
+<div class="article">
+
+<div class="header">
+  <h1>{{ post.title }}</h1>
+  {{ post.get_summary|safe }}
+</div>
+
+{{ post.get_text|safe }}
+
+<div class="footer">
+  <p>Posted {{ post.published_date }}</p>
+  <p><a href="{{ post.get_absolute_url }}">Permalink</a></p>
+  <hr>
+</div>
+

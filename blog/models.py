@@ -1,6 +1,7 @@
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils import timezone
+import markdown
 
 class Post(models.Model):
     """A blog post"""
@@ -10,6 +11,12 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+
+    def get_summary(self):
+        return markdown.markdown(self.summary)
+
+    def get_text(self):
+        return markdown.markdown(self.text)
 
     @staticmethod
     def get_posts():

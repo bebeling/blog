@@ -2,26 +2,12 @@
 
 {% block page_content %}
 
-{% for post in posts %}
+  {% for post in posts %}
 
-<div class="article">
+    {% include 'blog/post_content.html' %}
+    </div> <!-- end article -->
 
-<div class="header">
-  <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-  <p>{{ post.summary }}</p>
-</div>
-
-{{ post.text }}
-
-<div class="footer">
-  <p>Posted {{ post.published_date }}</p>
-  <p><a href="{{ post.get_absolute_url }}">Permalink</a></p>
-  <hr>
-</div>
-
-</div> <!-- end article -->
-
-{% endfor %}
+  {% endfor %}
 
 {% endblock page_content %}
 
