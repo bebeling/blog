@@ -31,17 +31,17 @@ body, html {
 }
 
 #pagehead {
-    margin: 1.5em auto 0 auto;
+    margin: 1.4em auto 0 auto;
 }
 
 #pagefoot {
-    margin: 3em auto 1.5em auto;
+    margin: 2.8em auto 1.4em auto;
 }
 
 div {
     position: relative;
     width: 100%;
-    margin: 1.5em auto;
+    margin: 1.4em auto;
 }
 
 
@@ -51,7 +51,7 @@ div {
 
 .article .footer hr {
     border-top: medium double #333;
-    margin: 3em 11em;
+    margin: 2.8em 11em;
     color: #333;
     text-align: center;
 }
@@ -60,7 +60,7 @@ div {
     display: inline-block;
     position: relative;
     top: -0.7em;
-    font-size: 1.5em;
+    font-size: 1.4em;
     padding: 0 0.25em;
     background: #f3e6ff;
 }
