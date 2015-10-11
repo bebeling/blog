@@ -26,7 +26,7 @@
 }
 .article .footer p {
     margin: 0;
-    line-height: 1.765;
+    line-height: 1.6471;
 }
 .article .footer .sitetitle {
     font-size: 1.1em;
@@ -38,7 +38,7 @@
  *---------------------------------------------*/
 
 #pagefoot .sitetitle {
-    font-size: 1.5em;
+    font-size: 1.4em;
     line-height: 1;
 }
 #pagefoot ul {
@@ -56,24 +56,24 @@
  *---------------------------------------------*/
 
 h1 {
-    margin-bottom: 0.75em;
-    font-size: 2em;
+    margin-bottom: 1.4em;
+    font-size: 3em;
     font-weight: normal;
-    line-height: 1.5;
-    text-align: center;
+    line-height: 1.4;
+    text-align: left;
 }
 h2 {
-    margin-bottom: 1em;
-    font-size: 1.5em;
+    margin-bottom: 1.4em;
+    font-size: 2em;
     font-weight: normal;
-    line-height: 1;
+    line-height: 1.4;
     text-align: left;
 }
 h3 {
-    margin-bottom: 0.5em;
+    margin-bottom: 1.4em;
     font-size: 1em;
     font-weight: bold;
-    line-height: 1;
+    line-height: 1.4;
     text-align: left;
 }
 
@@ -88,14 +88,14 @@ abbr {
 }
 blockquote, dd, dl, dt, ol, p, ul {
     display: block;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.4em;
     font-size: 1em;
     font-variant-numeric: oldstyle-nums;
-    line-height: 1.5;
+    line-height: 1.4;
     text-align: left;
 }
 blockquote {
-    margin: 0 2em 1.5em 2em;
+    margin: 0 2em 1.4em 2em;
 }
 dfn, .italic {
     font-style: italic;
@@ -103,7 +103,7 @@ dfn, .italic {
 dt {
     margin: 0;
     font-size: 1.1em;
-    line-height: 1.3636;
+    line-height: 1.2727;
 }
 ol {
     list-style: decimal outside none;
@@ -160,6 +160,6 @@ blockquote q:after { content: "\2019"; }
 
 img.imgcenter {
     display: block;
-    margin: 0 auto 1.5em auto;
+    margin: 0 auto 1.4em auto;
 }
 
