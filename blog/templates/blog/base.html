@@ -2,6 +2,9 @@
 <html lang="en">
 {% load static from staticfiles %}
 <head>
+  {% block extra_js %}
+  {% endblock extra_js %}
+
   <link rel="stylesheet" href="{% static "blog/styles.css" %}" type="text/css">
 
   {% block extra_css %}

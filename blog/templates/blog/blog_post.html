@@ -2,9 +2,65 @@
 
 {% load naturaltime from humanize %}
 
+{% block extra_js %}
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script>
+  var comments = {{ comments|safe }};
+
+  function sortCommentsAscending(a, b)
+  {
+    var x = moment(a.fields.date);
+    var y = moment(b.fields.date);
+
+    if (x.isBefore(y)) {
+      return -1;
+    }
+    else if (x.isAfter(y)) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+
+  function sortCommentsDescending(a, b)
+  {
+    return sortCommentsAscending(b, a);
+  }
+
+  function displayComments(sortOrder)
+  {
+    if (sortOrder === 'a') {
+      comments.sort(sortCommentsAscending);
+    }
+    else {
+      comments.sort(sortCommentsDescending);
+    }
+
+    var commentsHTML = '';
+
+    for (var i=0; i<comments.length; i++) {
+      var author = comments[i].fields.author;
+      var date = moment(comments[i].fields.date).fromNow();
+      var text = comments[i].fields.text;
+
+      commentsHTML += '<div class="comment"> <p class="comment_header"> <span class="comment_author">' + author + '</span> <span class="comment_date">(' + date + ')</span> </p> <p class="comment_text">' + text + '</p> </div>';
+    }
+    $('#commentsList').html(commentsHTML);
+  }
+
+  // comments display in descending order by default
+  $(document).ready(function() { displayComments('d') });
+</script>
+
+{% endblock extra_js %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/forms-min.css">
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/buttons-min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 {% endblock extra_css %}
 
 {% block page_title %}
@@ -31,16 +87,10 @@
       </fieldset>
     </form>
   </div>
+  <button class="pure-button" onclick="displayComments('a')"><i class="fa fa-sort-asc"></i></button>
+  <button class="pure-button" onclick="displayComments('d')"><i class="fa fa-sort-desc"></i></button>
   
-  {% for comment in comments %}
-    <div class="comment">
-      <p class="comment_header">
-        <span class="comment_author">{{ comment.author }}</span>
-        <span class="comment_date">({{ comment.date|naturaltime }})</span>
-      </p>
-      <p class="comment_text">{{ comment.text }}</p>
-    </div>
-  {% endfor %}
+  <div id="commentsList"></div>
 
 </div> <!-- end comments -->
 </div> <!-- end article -->

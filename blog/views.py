@@ -1,3 +1,4 @@
+from django.core import serializers
 from django.shortcuts import redirect
 from django.shortcuts import render
 from . import forms
@@ -33,7 +34,9 @@ def blog_post(request, post_pk, comment_form=None):
     if not post.is_published():
         return redirect('homepage')
 
-    comments = models.Comment.objects.filter(blog_post=post).order_by('-date')
+    comments_queryset = models.Comment.objects.filter(blog_post=post)
+    fields = ('author', 'date', 'text')
+    comments = serializers.serialize('json', comments_queryset, fields=fields)
     form = comment_form or forms.CommentForm()
     context = {
         'comment_form': form,
