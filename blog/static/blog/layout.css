@@ -62,6 +62,10 @@ p.comment_header {
 .comment_date {
     margin-left: 1em;
 }
+#sortButton {
+  font-size: 0.6em;
+  margin-left: 52em;
+}
 
 
 /*---------------------------------------------

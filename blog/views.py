@@ -10,13 +10,18 @@ def homepage(request):
     context = {
         'page_title': settings.BLOG_TITLE,
         'posts': posts,
-        'titlebar': settings.BLOG_TITLE,
         'site_title': settings.BLOG_TITLE,
+        'titlebar': settings.BLOG_TITLE,
     }
     return render(request, 'blog/post_list.html', context)
 
 def about(request):
-    return homepage(request)
+    context = {
+        'page_title': 'About',
+        'site_title': settings.BLOG_TITLE,
+        'titlebar': 'About - ' + settings.BLOG_TITLE,
+    }
+    return render(request, 'blog/about.html', context)
 
 def archive(request):
     posts = models.Post.get_posts()

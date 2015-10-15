@@ -8,6 +8,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 <script>
   var comments = {{ comments|safe }};
+  var sortOrder = 'd';  // current state of ordering
 
   function sortCommentsAscending(a, b)
   {
@@ -30,13 +31,19 @@
     return sortCommentsAscending(b, a);
   }
 
-  function displayComments(sortOrder)
+  function displayComments()
   {
     if (sortOrder === 'a') {
+      sortOrder = 'd';
       comments.sort(sortCommentsAscending);
+      $('#sortButton').html('<i class="fa fa-sort-asc"></i>');
+      $('#sortButton').prop('title', 'Sort comments ascending');
     }
     else {
+      sortOrder = 'a';
       comments.sort(sortCommentsDescending);
+      $('#sortButton').html('<i class="fa fa-sort-desc"></i>');
+      $('#sortButton').prop('title', 'Sort comments descending');
     }
 
     var commentsHTML = '';
@@ -87,8 +94,7 @@
       </fieldset>
     </form>
   </div>
-  <button class="pure-button" onclick="displayComments('a')"><i class="fa fa-sort-asc"></i></button>
-  <button class="pure-button" onclick="displayComments('d')"><i class="fa fa-sort-desc"></i></button>
+  <button id="sortButton" class="pure-button" onclick="displayComments()"></button>
   
   <div id="commentsList"></div>
 
